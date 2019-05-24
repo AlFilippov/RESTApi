@@ -1,32 +1,28 @@
 package com.filippov.restclient.restapi.controller;
 
+import com.filippov.restclient.restapi.Service.MessageServiceImpl;
 import com.filippov.restclient.restapi.dto.MessageDto;
-import com.filippov.restclient.restapi.facade.MessageFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequestMapping("message")
 @RestController
 public class MessageController {
 
-private final MessageFacade messageFacade;
-
-    public MessageController(MessageFacade messageFacade) {
-        this.messageFacade = messageFacade;
-    }
-
+    @Autowired
+    private MessageServiceImpl messageService;
     @GetMapping
-    public ResponseEntity<MessageDto> getData(){
-    MessageDto messageDto =messageFacade.getAll();
-    return new ResponseEntity<>(messageDto, HttpStatus.OK);
+    public ResponseEntity<List<MessageDto>> getAllPeople() {
+        return ResponseEntity.ok(messageService.getAllMessage());
+    }
 }
 
 
-}
 //    private Map<String, String> getMessage(@PathVariable String id) {
 //        return messages.stream().filter(messages -> messages.get("id").
 //                equals(id)).

@@ -1,10 +1,11 @@
 package com.filippov.restclient.restapi.dto;
 
-import com.filippov.restclient.restapi.domain.Message;
 import lombok.Data;
 
 @Data
 public class MessageDto {
-    private Message message;
+    private int indexDefenition;
+    private Integer idDefinition;
+    private String profession;
 
 }

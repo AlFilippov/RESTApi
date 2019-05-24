@@ -2,11 +2,9 @@ package com.filippov.restclient.restapi.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
+@Embeddable
 @Table(name="messagetwo")
 @Data
 public class MessageTwo {
