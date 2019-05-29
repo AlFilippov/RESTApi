@@ -4,15 +4,13 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-
-
 @Entity
-@Table(name="message")
+@Table(name="ProfessionTwoPart")
 @Data
-public class Message {
+public class ProfessionTwoPart {
     @Id
     private int indexDefenition;
     private Integer idDefinition;
     private String profession;
-
 }
+

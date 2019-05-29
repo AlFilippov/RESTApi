@@ -1,24 +1,30 @@
 package com.filippov.restclient.restapi.controller;
 
-import com.filippov.restclient.restapi.Service.MessageServiceImpl;
-import com.filippov.restclient.restapi.dto.MessageDto;
+import com.filippov.restclient.restapi.Service.ProfessionServiceImpl;
+import com.filippov.restclient.restapi.domain.ProfessionDataList;
+import com.filippov.restclient.restapi.dto.ListProfessionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("message")
+@RequestMapping("profession")
 @RestController
-public class MessageController {
+public class ProfessionController {
 
     @Autowired
-    private MessageServiceImpl messageService;
+    private ProfessionServiceImpl professionService;
     @GetMapping
-    public ResponseEntity<List<MessageDto>> getAllPeople() {
-        return ResponseEntity.ok(messageService.getAllMessage());
+    public ResponseEntity<List<ListProfessionDto>> getAllPeople() {
+        return ResponseEntity.ok(professionService.getList());
+    }
+    @GetMapping("/profession/{id}")
+    public ResponseEntity<ProfessionDataList>findById(@PathVariable("id") Long id ){
+        return ResponseEntity.ok(professionService.getId(id));
     }
 }
 

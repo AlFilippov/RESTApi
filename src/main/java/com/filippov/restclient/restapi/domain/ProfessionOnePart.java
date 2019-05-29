@@ -4,13 +4,14 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Embeddable
-@Table(name="messagetwo")
+
+
+@Entity
+@Table(name="ProfessionOnePart")
 @Data
-public class MessageTwo {
+public class ProfessionOnePart {
     @Id
     private int indexDefenition;
     private Integer idDefinition;
     private String profession;
 }
-
