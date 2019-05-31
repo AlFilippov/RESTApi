@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ListProfessionDto {
-    private Long id ;
+    private Long  id ;
     private ProfessionDto professionOnePart;
     private ProfessionDto professionTwoPart;
 

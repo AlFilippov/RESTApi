@@ -22,8 +22,8 @@ public class ProfessionController {
     public ResponseEntity<List<ListProfessionDto>> getAllPeople() {
         return ResponseEntity.ok(professionService.getList());
     }
-    @GetMapping("/profession/{id}")
-    public ResponseEntity<ProfessionDataList>findById(@PathVariable("id") Long id ){
+    @GetMapping("/{id}")
+    public ResponseEntity<ListProfessionDto>findById(@PathVariable("id") Long id ){
         return ResponseEntity.ok(professionService.getId(id));
     }
 }

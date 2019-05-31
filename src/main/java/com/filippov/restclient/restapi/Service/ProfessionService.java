@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 public interface ProfessionService {
 List<ListProfessionDto>getList();
-ProfessionDataList getId(Long id);
+ListProfessionDto getId(Long id);
 
 }
