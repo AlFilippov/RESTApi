@@ -26,6 +26,7 @@ public class ProfessionServiceImpl implements ProfessionService {
         if(professionDataListRepository.findById(id).isPresent()){
         ProfessionDataList professionDataList = professionDataListRepository.findById(id).get();
           ListProfessionDto listProfessionDto = ProfessionMapper.PROFESSION_MAPPER.toProfessionDto(professionDataList);
+
        return  listProfessionDto;
        } else {
             return null;
