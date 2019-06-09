@@ -3,7 +3,7 @@ package com.filippov.restclient.restapi.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-
+@Entity
 @Data
 @Table
 public class DataAboutCoursesUsers {
@@ -13,6 +13,6 @@ public class DataAboutCoursesUsers {
     private String direction_course;
     private String name_course;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_data_id")
+    @JoinColumn(name = "userdata")
     private UserData userData;
 }

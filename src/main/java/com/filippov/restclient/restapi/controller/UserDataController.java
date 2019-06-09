@@ -18,14 +18,14 @@ public class UserDataController {
     @Autowired
     private UserDataServiceImpl userDataService;
 
-    @PostMapping
-public ResponseEntity<UserDataDTO>getUserData(@RequestBody UserDataDTO userDataDTO){
-       userDataService.saveData(userDataDTO);
-       return ResponseEntity.status(HttpStatus.CREATED).body(userDataDTO);
-    }
-    @PostMapping
-    public ResponseEntity<List<UserDataDTO>>saveListUserData(@RequestBody List<UserDataDTO> userDataDTOList){
-        userDataService.saveDataList(userDataDTOList);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userDataDTOList);
-    }
+//    @PostMapping
+//    public ResponseEntity<UserDataDTO> getUserData(@RequestBody UserDataDTO userDataDTO) {
+//        userDataService.saveData(userDataDTO);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(userDataDTO);
+//    }
+   @PostMapping
+   public ResponseEntity<List<UserDataDTO>>saveListUserData(@RequestBody List<UserDataDTO> userDataDTOList){
+       userDataService.saveDataList(userDataDTOList);
+      return ResponseEntity.status(HttpStatus.CREATED).body(userDataDTOList);
+   }
 }
