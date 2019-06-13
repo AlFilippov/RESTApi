@@ -14,4 +14,5 @@ public class ProfessionOnePart {
     private int indexDefenition;
     private Integer idDefinition;
     private String profession;
+
 }

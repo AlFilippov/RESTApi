@@ -12,5 +12,6 @@ public class ProfessionTwoPart {
     private int indexDefenition;
     private Integer idDefinition;
     private String profession;
+
 }
 

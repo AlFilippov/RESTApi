@@ -12,8 +12,12 @@ import java.util.List;
 
 @Service("professionservice")
 public class ProfessionServiceImpl implements ProfessionService {
-    @Autowired
-    private ProfessionDataListRepository professionDataListRepository;
+    private final ProfessionDataListRepository professionDataListRepository;
+
+    public ProfessionServiceImpl(ProfessionDataListRepository professionDataListRepository) {
+        this.professionDataListRepository = professionDataListRepository;
+    }
+
     @Override
     public List<ListProfessionDto> getList() {
         List<ProfessionDataList> professionDataLists =new ArrayList<>(professionDataListRepository.findAll());

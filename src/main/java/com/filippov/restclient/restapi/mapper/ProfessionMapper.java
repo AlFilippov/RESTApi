@@ -1,7 +1,9 @@
 package com.filippov.restclient.restapi.mapper;
 
+import com.filippov.restclient.restapi.domain.GeneralInitData;
 import com.filippov.restclient.restapi.domain.ProfessionDataList;
 import com.filippov.restclient.restapi.domain.UserData;
+import com.filippov.restclient.restapi.dto.GeneralInitDataDTO;
 import com.filippov.restclient.restapi.dto.ListProfessionDto;
 import com.filippov.restclient.restapi.dto.UserDataDTO;
 import org.mapstruct.Mapper;
@@ -17,4 +19,5 @@ List<ListProfessionDto>toListMessageDto(List<ProfessionDataList> professionDataL
 ListProfessionDto toProfessionDto(ProfessionDataList professionDataList);
 UserData toUserData(UserDataDTO userDataDTO);
 List<UserData>toUserDataList(List<UserDataDTO>userDataDTOList);
+List<GeneralInitDataDTO> toGeneralInitDataDTOList(List<GeneralInitData>generalInitDataList);
 }

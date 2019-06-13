@@ -17,7 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .mvcMatchers("/").permitAll()
+                .antMatchers("/profession","/profession/*")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable();
@@ -29,9 +30,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return map -> {
             String id = (String) map.get("sub");
             UserData userData = userDataListRepository.findById(id).orElseGet(() -> {
-            //TODO: Дописать сохранение юзера в БД   
+            //TODO: Дописать сохранение юзера в БД
+
                 UserData newUserData = new UserData();
-                newUserData.set
+             newUserData.setId((String) map.get("sub"));
+             newUserData.setEmail((String)map.get("email"));
+             newUserData.setLogin((String) map.get("email"));
                 return newUserData;
             });
             return userDataListRepository.save(userData);
