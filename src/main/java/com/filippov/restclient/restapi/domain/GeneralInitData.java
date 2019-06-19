@@ -1,6 +1,5 @@
 package com.filippov.restclient.restapi.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 

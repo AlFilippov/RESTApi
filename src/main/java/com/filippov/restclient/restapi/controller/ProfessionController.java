@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("profession")
+@RequestMapping("data")
 @RestController
 public class ProfessionController {
 
@@ -23,14 +23,15 @@ public class ProfessionController {
 
 
     @GetMapping
-    public ResponseEntity<List<GeneralInitDataDTO>> getAllPeople() {
+    public ResponseEntity<List<GeneralInitDataDTO>> getAllProfession() {
         return ResponseEntity.ok(generalInitDataService.getList());
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<ListProfessionDto>findById(@PathVariable("id") Long id ){
-        return ResponseEntity.ok(professionService.getId(id));
+    @GetMapping("/profession/info")
+    public ResponseEntity<GeneralInitDataDTO>findById(@RequestParam(value ="id") int id ){
+        return ResponseEntity.ok(generalInitDataService.getData(id));
     }
-    @GetMapping("/users")
+
+    @GetMapping("/profession")
     public ResponseEntity<ListProfessionDto>findById(@RequestParam(value = "id")long id){
         return ResponseEntity.ok(professionService.getId(id));
     }

@@ -21,4 +21,16 @@ public class GeneralInitDataServiceImpl implements GeneralInitDataService {
        List<GeneralInitData> generalInitData = new ArrayList<>(generalInitDataRepository.findAll());
         return new ArrayList<>(ProfessionMapper.PROFESSION_MAPPER.toGeneralInitDataDTOList(generalInitData));
     }
+
+    @Override
+    public GeneralInitDataDTO getData(Integer id) {
+        if(generalInitDataRepository.findById(id).isPresent()){
+          GeneralInitData generalInitData = generalInitDataRepository.findById(id).get();
+           GeneralInitDataDTO generalInitDataDTO = ProfessionMapper.PROFESSION_MAPPER.toGeneralInitDataDTO(generalInitData);
+            return  generalInitDataDTO;
+        } else {
+            return null;
+        }
+    }
+
 }

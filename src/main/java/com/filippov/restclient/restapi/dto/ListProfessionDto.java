@@ -8,7 +8,7 @@ import java.util.List;
 public class ListProfessionDto {
     private Long  id ;
     private List<ProfessionDtoOnePart> professionOnePart;
-    private List<ProfessionDtoTwoPart> professionTwoPart;
+    private List<ProfessionDtoOnePart> professionTwoPart;
 
 
 }

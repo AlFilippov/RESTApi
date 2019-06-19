@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface GeneralInitDataService {
     List<GeneralInitDataDTO>getList();
+    GeneralInitDataDTO getData(Integer id);
 }

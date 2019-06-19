@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/profession","/profession/*")
+                .antMatchers("/data/profession","/data","/data/profession/info","/data/category","/data/category/*")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
